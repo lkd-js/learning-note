@@ -1,0 +1,144 @@
+$text-color: rgba(116, 116, 240, 0.831);
+
+@keyframes move {
+    from {
+        top: 0;
+        background-color: #fff;
+    }
+
+    to {
+        top: 40px;
+        background-color: lighten($text-color, 20%);
+    }
+}
+
+@keyframes bigger {
+    from {
+        opacity: 0.8;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@mixin content {
+    span {
+        animation: bigger 1s linear infinite alternate;
+        border-radius: 10px;
+        background-color: lighten($text-color, 20%);
+        padding: 20px 20px 20px;
+        color: white;
+    }
+
+    button {
+        position: relative;
+        animation: move 1s linear infinite alternate;
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+        width: 80px;
+        cursor: pointer;
+    }
+}
+
+@mixin boxLR {
+    width: 50%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include content;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(202deg, $text-color, white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    .container {
+        @media (max-width: 480px) {
+            width: 300px;           
+        }
+        width: 60vw;
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 20px 10px 30px $text-color;
+        border-radius: 20px;
+
+        .leftBox {
+            @include boxLR;
+            border-right: 1px solid $text-color;
+            border-radius: 20px 0 0 20px;
+            background-image: url(../images/03.png);
+        }
+
+        .rightBox {
+            @include boxLR;
+            border-left: 1px solid $text-color;
+            background-image: url(../images/02.jpg);
+            border-radius: 0 20px 20px 0;
+        }
+
+        #mBox {
+            position: fixed;
+            height: 45vh;
+            width: 32vw;
+            background-color: #fff;
+            transition: all 2s ease;
+            background-image: linear-gradient(202deg, $text-color, white);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #mBox.left{
+            transform: translateX(-16vw);
+        }
+        #mBox.right{
+            transform: translateX(16vw);
+        }
+
+        .text{
+            display: grid;
+            grid-template-rows: 60px repeat(3,40px) 30px 30px;
+            grid-row-gap: 10px;
+            
+            span{
+                text-align: center;
+                font-size: larger;
+                color: white;
+            }
+            input{
+                height: 25px;
+                outline: none;
+                border-radius: 5px;
+                border: none;
+                &:focus{
+                    background-color: lighten($text-color,20%)
+                }
+            }
+            button{
+                width: 120px;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,240 @@
+@-webkit-keyframes move {
+  from {
+    top: 0;
+    background-color: #fff;
+  }
+  to {
+    top: 40px;
+    background-color: rgba(208, 208, 250, 0.831);
+  }
+}
+
+@keyframes move {
+  from {
+    top: 0;
+    background-color: #fff;
+  }
+  to {
+    top: 40px;
+    background-color: rgba(208, 208, 250, 0.831);
+  }
+}
+
+@-webkit-keyframes bigger {
+  from {
+    opacity: 0.8;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes bigger {
+  from {
+    opacity: 0.8;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(202deg, rgba(116, 116, 240, 0.831), white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+body .container {
+  width: 60vw;
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 20px 10px 30px rgba(116, 116, 240, 0.831);
+          box-shadow: 20px 10px 30px rgba(116, 116, 240, 0.831);
+  border-radius: 20px;
+}
+
+@media (max-width: 480px) {
+  body .container {
+    width: 300px;
+  }
+}
+
+body .container .leftBox {
+  width: 50%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-right: 1px solid rgba(116, 116, 240, 0.831);
+  border-radius: 20px 0 0 20px;
+  background-image: url(../images/03.png);
+}
+
+body .container .leftBox span {
+  -webkit-animation: bigger 1s linear infinite alternate;
+          animation: bigger 1s linear infinite alternate;
+  border-radius: 10px;
+  background-color: rgba(208, 208, 250, 0.831);
+  padding: 20px 20px 20px;
+  color: white;
+}
+
+body .container .leftBox button {
+  position: relative;
+  -webkit-animation: move 1s linear infinite alternate;
+          animation: move 1s linear infinite alternate;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 80px;
+  cursor: pointer;
+}
+
+body .container .rightBox {
+  width: 50%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-left: 1px solid rgba(116, 116, 240, 0.831);
+  background-image: url(../images/02.jpg);
+  border-radius: 0 20px 20px 0;
+}
+
+body .container .rightBox span {
+  -webkit-animation: bigger 1s linear infinite alternate;
+          animation: bigger 1s linear infinite alternate;
+  border-radius: 10px;
+  background-color: rgba(208, 208, 250, 0.831);
+  padding: 20px 20px 20px;
+  color: white;
+}
+
+body .container .rightBox button {
+  position: relative;
+  -webkit-animation: move 1s linear infinite alternate;
+          animation: move 1s linear infinite alternate;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 80px;
+  cursor: pointer;
+}
+
+body .container #mBox {
+  position: fixed;
+  height: 45vh;
+  width: 32vw;
+  background-color: #fff;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+  background-image: linear-gradient(202deg, rgba(116, 116, 240, 0.831), white);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container #mBox.left {
+  -webkit-transform: translateX(-16vw);
+          transform: translateX(-16vw);
+}
+
+body .container #mBox.right {
+  -webkit-transform: translateX(16vw);
+          transform: translateX(16vw);
+}
+
+body .container .text {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 60px (40px)[3] 30px 30px;
+      grid-template-rows: 60px repeat(3, 40px) 30px 30px;
+  grid-row-gap: 10px;
+}
+
+body .container .text span {
+  text-align: center;
+  font-size: larger;
+  color: white;
+}
+
+body .container .text input {
+  height: 25px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+body .container .text input:focus {
+  background-color: rgba(208, 208, 250, 0.831);
+}
+
+body .container .text button {
+  width: 120px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

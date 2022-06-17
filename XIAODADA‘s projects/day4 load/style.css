@@ -1,0 +1,121 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 100px;
+}
+
+body .container {
+  width: 50vw;
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .container .line {
+  width: 100%;
+  height: 20%;
+  background-color: #fff;
+  margin-top: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+body .container .line .liner {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 0;
+  border-top: 2px solid rgba(0, 0, 255, 0.529);
+  border-bottom: 2px solid rgba(0, 0, 255, 0.529);
+  margin-top: -2px;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+body .container .line div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 20%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  border: 5px solid white;
+  z-index: 99;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+body .container .line div.current {
+  border: 5px solid rgba(0, 0, 255, 0.529);
+}
+
+body .container .btn {
+  width: 40%;
+  height: 10%;
+  margin-top: 10%;
+}
+
+body .container .btn #left {
+  padding: 0;
+  height: 100%;
+  width: 40%;
+  border-radius: 5px;
+  border: none;
+  float: left;
+}
+
+body .container .btn #left:hover {
+  background-color: rgba(0, 0, 255, 0.529);
+}
+
+body .container .btn #left:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+body .container .btn #right {
+  padding: 0;
+  height: 100%;
+  width: 40%;
+  border-radius: 5px;
+  border: none;
+  float: right;
+}
+
+body .container .btn #right:hover {
+  background-color: rgba(0, 0, 255, 0.529);
+}
+
+body .container .btn #right:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+/*# sourceMappingURL=style.css.map */

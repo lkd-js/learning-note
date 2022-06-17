@@ -1,0 +1,102 @@
+@mixin btn {
+    height: 40px;
+    width: 30px;
+    background-color: rgba(24, 22, 22, .6);
+    z-index: 99;
+    position: fixed;
+    margin-top: -20px;
+    border-radius: 4px;
+    border: none;
+    top: 50%;
+
+}
+
+@mixin li {
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-size: cover;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        height: 50vh;
+        width: 35vw;
+        border: 1px solid #000;
+        overflow: hidden;
+        position: relative;
+
+        #rad {
+            position: absolute;
+            width: 80px;
+            height: 10px;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -40px;
+            z-index: 99;
+
+            li {
+                width: 10px;
+                height: 10px;
+                margin-right: 10px;
+                border-radius: 50%;
+                background-color: red;
+                float: left;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+            li.current{
+                width: 20px;
+                border-radius: 6px;
+            }
+        }
+
+        .left {
+            @include btn();
+            left: 33%;
+        }
+
+        .right {
+            @include btn();
+            right: 33%;
+        }
+
+        ul {
+            width: 500%;
+            height: 100%;
+            transform: translateX(0);
+            transition: all .5s ease;
+
+            .li1 {
+                @include li();
+                background-image: url(../images/01.jpg);
+            }
+
+            .li2 {
+                @include li();
+                background-image: url(../images/02.jpg);
+
+            }
+
+            .li3 {
+                @include li();
+                background-image: url(../images/03.png);
+
+            }
+
+            .li4 {
+                @include li();
+                background-image: url(../images/04.png);
+
+            }
+
+        }
+    }
+}

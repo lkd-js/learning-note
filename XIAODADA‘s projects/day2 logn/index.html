@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花式登录</title>
+    <link rel="stylesheet" href="../tool/reset.css">
+    <script src="../tool/vue.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="leftBox">
+            <span>注册完成了了吗？更多内容等着客官哦，点击登陆吧</span>
+            <button @click="move('left')">登录</button>
+        </div>
+        <div class="rightBox">
+            <span>还没有账号？注册一个吧</span>
+            <button @click="move('right')">注册</button>
+        </div>
+        <div :class="position" id="mBox">
+            <div class="leftText text" v-show="mleft">
+                <span>登录</span>
+                <input type="text" placeholder="请输入用户名或邮箱">
+                <input type="password" placeholder="请输入密码">
+                <button>点击登录</button>
+            </div>
+            <div class="rightText text" v-show="!mleft">
+                <span>注册</span>
+                <input type="text" placeholder="请输入您的邮箱">
+                <input type="password" placeholder="请输入密码">
+                <input type="password" placeholder="请确认密码">
+                <input type="password" placeholder="请输入验证码">
+                <button class="hq">点击获取验证码</button>
+                <button>提交</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const mBox = document.getElementById('mBox');
+        var app = new Vue({
+            el: '#container',
+            data: {
+                position: 'left',
+                mleft: true
+            },
+            methods: {
+                move(LR) {
+                    this.position = LR;
+                    this.mleft = !this.mleft
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

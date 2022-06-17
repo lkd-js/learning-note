@@ -1,0 +1,117 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container {
+  height: 50vh;
+  width: 35vw;
+  border: 1px solid #000;
+  overflow: hidden;
+  position: relative;
+}
+
+body .container #rad {
+  position: absolute;
+  width: 80px;
+  height: 10px;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -40px;
+  z-index: 99;
+}
+
+body .container #rad li {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: red;
+  float: left;
+}
+
+body .container #rad li:last-child {
+  margin-right: 0;
+}
+
+body .container #rad li.current {
+  width: 20px;
+  border-radius: 6px;
+}
+
+body .container .left {
+  height: 40px;
+  width: 30px;
+  background-color: rgba(24, 22, 22, 0.6);
+  z-index: 99;
+  position: fixed;
+  margin-top: -20px;
+  border-radius: 4px;
+  border: none;
+  top: 50%;
+  left: 33%;
+}
+
+body .container .right {
+  height: 40px;
+  width: 30px;
+  background-color: rgba(24, 22, 22, 0.6);
+  z-index: 99;
+  position: fixed;
+  margin-top: -20px;
+  border-radius: 4px;
+  border: none;
+  top: 50%;
+  right: 33%;
+}
+
+body .container ul {
+  width: 500%;
+  height: 100%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+body .container ul .li1 {
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-size: cover;
+  background-image: url(../images/01.jpg);
+}
+
+body .container ul .li2 {
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-size: cover;
+  background-image: url(../images/02.jpg);
+}
+
+body .container ul .li3 {
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-size: cover;
+  background-image: url(../images/03.png);
+}
+
+body .container ul .li4 {
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-size: cover;
+  background-image: url(../images/04.png);
+}
+/*# sourceMappingURL=style.css.map */
